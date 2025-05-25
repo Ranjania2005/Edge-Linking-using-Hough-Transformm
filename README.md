@@ -24,7 +24,7 @@ Using the HoughLinesP(),detect line co-ordinates for every points in the images.
 # Program
 
 ### Input image
-```
+```Python
 import cv2
 import matplotlib.pyplot as plt
 image = cv2.imread('bird.jpg')  # Replace with your image path
@@ -37,7 +37,7 @@ plt.show()
 ![Screenshot 2025-04-24 142657](https://github.com/user-attachments/assets/fbd46957-2be9-4ac5-9d2b-16501ff7da1a)
 
 ### Grayscale image
-```
+```Python
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Display Grayscale Image
@@ -50,7 +50,7 @@ plt.show()
 
 ### Canny Edge detector output
 
-```
+```Python
 edges = cv2.Canny(gray_image, 50, 150, apertureSize=3)
 # Display Canny Edge Detection Output   
 plt.imshow(edges, cmap='gray')
@@ -61,7 +61,7 @@ plt.show()
 ![Screenshot 2025-04-24 142709](https://github.com/user-attachments/assets/2255dfde-e504-4100-b273-2d0a9eaf4a65)
 
 ### Display the result of Hough transform
-```
+```Python
 import numpy as np
 # Detect lines using the probabilistic Hough transform
 lines = cv2.HoughLinesP(edges, rho=1, theta=np.pi/180, threshold=100, minLineLength=50, maxLineGap=10)
